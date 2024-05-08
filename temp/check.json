@@ -1,0 +1,44 @@
+1
+
+{'actions': [OpenAIToolAgentAction(tool='chatgpt', tool_input={'query': 'formula for momentum in physics'
+        }, log="\nInvoking: `chatgpt` with `{'query': 'formula for momentum in physics'}`\n\n\n", message_log=[AIMessageChunk(content='', additional_kwargs={'tool_calls': [
+                    {'index': 0, 'id': 'call_tTxeERzf8gHhaUEkgV5NAgPF', 'function': {'arguments': '{
+                                "query": "formula for momentum in physics"
+                            }', 'name': 'chatgpt'
+                        }, 'type': 'function'
+                    }
+                ]
+            }, response_metadata={'finish_reason': 'tool_calls'
+            })
+        ], tool_call_id='call_tTxeERzf8gHhaUEkgV5NAgPF')
+    ], 'messages': [AIMessageChunk(content='', additional_kwargs={'tool_calls': [
+                {'index': 0, 'id': 'call_tTxeERzf8gHhaUEkgV5NAgPF', 'function': {'arguments': '{
+                            "query": "formula for momentum in physics"
+                        }', 'name': 'chatgpt'
+                    }, 'type': 'function'
+                }
+            ]
+        }, response_metadata={'finish_reason': 'tool_calls'
+        })
+    ]
+}Tool: chatgpt
+2
+
+{'steps': [AgentStep(action=OpenAIToolAgentAction(tool='chatgpt', tool_input={'query': 'formula for momentum in physics'
+        }, log="\nInvoking: `chatgpt` with `{'query': 'formula for momentum in physics'}`\n\n\n", message_log=[AIMessageChunk(content='', additional_kwargs={'tool_calls': [
+                    {'index': 0, 'id': 'call_tTxeERzf8gHhaUEkgV5NAgPF', 'function': {'arguments': '{
+                                "query": "formula for momentum in physics"
+                            }', 'name': 'chatgpt'
+                        }, 'type': 'function'
+                    }
+                ]
+            }, response_metadata={'finish_reason': 'tool_calls'
+            })
+        ], tool_call_id='call_tTxeERzf8gHhaUEkgV5NAgPF'), observation='The formula for momentum in physics is given by:\n\n$$ p = mv $$\n\nwhere:\n- \\( p \\) represents the momentum,\n- \\( m \\) is the mass of the object,\n- \\( v \\) is the velocity of the object.')
+    ], 'messages': [FunctionMessage(content='The formula for momentum in physics is given by:\n\n$$ p = mv $$\n\nwhere:\n- \\( p \\) represents the momentum,\n- \\( m \\) is the mass of the object,\n- \\( v \\) is the velocity of the object.', name='chatgpt')
+    ]
+}3
+
+{'output': 'The formula for momentum in physics is given by:\n\n$$ p = mv $$\n\nwhere:\n- \\( p \\) represents the momentum,\n- \\( m \\) is the mass of the object,\n- \\( v \\) is the velocity of the object.', 'messages': [AIMessage(content='The formula for momentum in physics is given by:\n\n$$ p = mv $$\n\nwhere:\n- \\( p \\) represents the momentum,\n- \\( m \\) is the mass of the object,\n- \\( v \\) is the velocity of the object.')
+    ]
+}

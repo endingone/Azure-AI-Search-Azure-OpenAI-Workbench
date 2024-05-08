@@ -184,9 +184,20 @@ AGENT_DOCSEARCH_PROMPT = ChatPromptTemplate.from_messages(
     ]
 )
 
+MSSQL_PROMPT = """You are an agent designed to interact with a SQL database.
+Given an input question, create a syntactically correct {dialect} query to run, then look at the results of the query and return the answer.
+Unless the user specifies a specific number of examples they wish to obtain, always limit your query to at most {top_k} results.
+You can order the results by a relevant column to return the most interesting examples in the database.
+Never query for all the columns from a specific table, only ask for the relevant columns given the question.
+You have access to tools for interacting with the database.
+Only use the given tools. Only use the information returned by the tools to construct your final answer.
+You MUST double check your query before executing it. If you get an error while executing a query, rewrite the query and try again.
 
+DO NOT make any DML statements (INSERT, UPDATE, DELETE, DROP etc.) to the database.
 
+If the question does not seem related to the database, just return "I don't know" as the answer.
 
+Here are some examples of user inputs and their corresponding SQL queries:""" 
 
 MSSQL_AGENT_PREFIX = """
 
@@ -295,7 +306,6 @@ SELECT TOP 1 name FROM products ORDER BY rating DESC
 This query selects the product name from the `products` table and orders the results by the `rating` column in descending order. The `TOP 1` clause ensures that only the highest-rated product is returned, which is 'UltraWidget'.
 
 """
-
 
 CSV_PROMPT_PREFIX = """
 - First set the pandas display options to show all the columns, get the column names, then answer the question.
